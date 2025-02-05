@@ -1,0 +1,110 @@
+.pg-match {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  /* width: fit-content; */
+
+  box-shadow: inset 0 0 10px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.pg-match > * {
+  padding: .6em;
+}
+
+.pg-match > .person-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  gap: 0.5em;
+
+  flex: 3;
+  border-right:  2px dashed white;
+}
+
+.person-side > .wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  width: 100%;
+}
+
+.person-side .person-name {
+  flex: 4;
+  font-size: 1.1em;
+
+  overflow-wrap: anywhere;
+}
+
+.pg-match > .gifts-side {
+  display: flex;
+  align-items: start;
+
+  flex: 8;
+
+  gap: 0.7em;
+}
+
+/* .pg-match > .gifts-side > * {
+  margin: 0.5em;
+} */
+
+.gifts-side > .gift-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  flex: 9;
+
+  /* min-height: 1.6em; */
+}
+
+.gifts-side > .add-gift-btn {
+  /* flex: 1; */
+  border-radius: 50%;
+  outline: 2px dashed black;
+
+  height: 1.6em;
+  margin-top: 0.2em;
+
+  transition: all 200ms linear;
+  /* margin: 0.4em; */
+}
+
+/* .add-gift-btn > img { */
+  /* filter: invert(1); */
+/* } */
+
+.pg-match > .gifts-side li {
+  list-style-type: none;
+}
+
+.change-rating-btn {
+  width: 1.5em;
+  height: 1.5em;
+  outline: 2px dashed white;
+  border-radius: 6px;
+
+  transition: all 200ms linear;
+  /* mix-blend-mode: difference; */
+}
+
+.change-rating-btn:hover,
+.change-rating-btn:focus,
+.gifts-side > .add-gift-btn:hover,
+.gifts-side > .add-gift-btn:focus {
+  transform: scale(1.1, 1.1);
+  outline-style: solid;
+}
+
+.rating-setter {
+  position: absolute;
+  top: 2em;
+  left: 0.5em;
+
+  box-shadow: .2em .2em 5px 3px black;
+}

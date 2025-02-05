@@ -1,0 +1,33 @@
+.modal-background {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:none;
+}
+
+.modal-box::backdrop {
+  background-color: black;
+  opacity: 0.3;
+}
+
+.modal-box {
+  background: none;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-container {
+  width: 25em;
+  padding: 1.2em 2.2em;
+
+  background-color: whitesmoke;
+
+  border-radius: 1em;
+  box-shadow: 0.5em 0.7em 5px black;
+
+  transform: translateY(-100vh);
+}

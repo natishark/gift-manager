@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+*,
+*::after,
+*::before {
+  color: rgb(12, 0, 0);
+  font-family: "Sofia Sans", serif;
+  font-weight: 400;
+}
+
+.icon > img {
+  height: 100%;
+}
+
+.icon {
+  background-color: inherit;
+}
+
+.ui-button {
+  border-radius: 1em;
+  padding: 0.4em 1.1em;
+}
