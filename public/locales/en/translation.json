@@ -1,0 +1,46 @@
+{
+  "appName": "Gift Manager",
+  "icon": {
+    "title": {
+      "sort": "Sort within distributions by distribution rating",
+      "clear": "Clear everithing and start anew",
+      "savePDF": "Save as PDF",
+      "duplicateDistribution": "Duplicate distribution"
+    },
+    "alt": {
+      "sort": "Sort icon",
+      "clear": "Clear icon",
+      "settings": "Settings icon",
+      "savePDF": "Save as PDF icon",
+      "duplicateDistribution": "Duplicate icon",
+      "delete": "Delete icon",
+      "grab": "Grab icon",
+      "edit": "Edit icon",
+      "add": "Add icon"
+    }
+  },
+  "button.name": {
+    "createCompany": "Create company",
+    "add": "Add"
+  },
+  "totalPrice": "Total:",
+  "editPrompt": "Edit me!",
+  "ModalDistributionCreator": {
+    "title": "Gifts for... (use ',' as a separator)",
+    "placeholder": "Write names of people here...",
+    "confirm": "Ok!"
+  },
+  "ModalGiftEditor": {
+    "title": "Gift for {{person}}",
+    "label": {
+      "name": "Name",
+      "price": "Price",
+      "link": "Link"
+    },
+    "placeholder": {
+      "name": "Gift name",
+      "link": "Link to the gift"
+    },
+    "confirm": "Save"
+  }
+}

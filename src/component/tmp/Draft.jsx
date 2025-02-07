@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 
 import SortIcon from '../../resources/icons/companyDistribution/magic-sort.svg';
 import ClearIcon from '../../resources/icons/companyDistribution/clear.svg';
@@ -11,6 +11,7 @@ import { Page } from "../Page/Page";
 import { GiftMap } from "../../model/giftMap";
 import { RgbColor } from "../../utils/color/RgbColor";
 import { SettingsContextProvider } from "../../context/SettingsContext/SettingsContext";
+import { useTranslation } from "react-i18next";
 
 const State = { START: "start", CREATE_COMPANY: "createCompany", WORK: "work" };
 
@@ -22,6 +23,7 @@ const compareFunction = (a, b) => {
 };
 
 export default function Draft() {
+  const { t, i18n } = useTranslation();
   /** What is going to be in settings?
          * - Rating theme
          * - Rating number
@@ -72,13 +74,13 @@ export default function Draft() {
     <>
       <button 
         className='icon' 
-        title='Sort within distributions by distribution rating'
+        title={t('icon.title.sort')}
         onClick={handleSort}
       >
-        <img src={SortIcon} alt="Sort icon"></img>
+        <img src={SortIcon} alt={t('icon.alt.sort')}></img>
       </button>
-      <button className='icon' title='Clear everithing and start anew'>
-        <img src={ClearIcon} alt="Clear icon"></img>
+      <button className='icon' title={t('icon.title.clear')}>
+        <img src={ClearIcon} alt={t('icon.alt.clear')}></img>
       </button>
     </>
   );
@@ -87,8 +89,8 @@ export default function Draft() {
     <Page>
       <Header>
         {appState === State.WORK && workSpecificHeaderButtons()}
-        <button className='icon' title='Settings'>
-          <img src={SettingsIcon} alt="Settings icon"></img>
+        <button className='icon'>
+          <img src={SettingsIcon} alt={t('icon.alt.settings')}></img>
         </button>
       </Header>
       <SettingsContextProvider value={settings}>
@@ -99,7 +101,7 @@ export default function Draft() {
             onAddDistribution={handleAddDistribution} 
           /> :
           <button className="ui-button" onClick={() => setAppState(State.CREATE_COMPANY)}>
-            Create company
+            {t('button.name.createCompany')}
           </button>
         }
       </SettingsContextProvider>

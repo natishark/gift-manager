@@ -13,8 +13,11 @@ import { useDroppable } from "@dnd-kit/core";
 import { rectSortingStrategy, SortableContext } from "@dnd-kit/sortable";
 import { Gift } from '../../model/gift';
 import { useSettingsContext } from '../../context/SettingsContext/SettingsContext';
+import { useTranslation } from 'react-i18next';
 
 export function PersonGiftsMatch({ personGifts, onUpdate }) {
+  const { t } = useTranslation();
+
   const settingsContext = useSettingsContext();
 
   const [isEditRateMode, setEditRateMode] = useState(false);
@@ -53,7 +56,11 @@ export function PersonGiftsMatch({ personGifts, onUpdate }) {
   ));
 
   return (
-    <SortableContext id={personGifts.id} items={personGifts.gifts} strategy={rectSortingStrategy}>
+    <SortableContext
+      id={personGifts.id}
+      items={personGifts.gifts}
+      strategy={rectSortingStrategy}
+    >
       <div 
         className='pg-match' 
         style={{backgroundColor: getColorByRate(settingsContext.ratingTheme, personGifts.rate, settingsContext.ratingNumber)}}
@@ -84,7 +91,7 @@ export function PersonGiftsMatch({ personGifts, onUpdate }) {
             {gifts}
           </ul>
           <button className="icon add-gift-btn" onClick={handleGiftAddition}>
-            <img src={AddIcon} alt="add icon"></img>
+            <img src={AddIcon} alt={t('icon.alt.add')}></img>
           </button>
         </div>
       </div>

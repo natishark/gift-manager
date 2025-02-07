@@ -21,10 +21,12 @@ import { CSS } from '@dnd-kit/utilities';
 
 import { giftMapToPdf } from '../../pdf/giftMapToPdf';
 import { useSettingsContext } from '../../context/SettingsContext/SettingsContext';
+import { useTranslation } from 'react-i18next';
 
 const fileName = 'gifts-for-all';
 
 export function CompanyDistribution({ giftMap, onChange }) {
+  const { t } = useTranslation();
   const settingsContext = useSettingsContext();
 
   const {attributes, listeners, setNodeRef, transform, transition} = useSortable({ id: giftMap.id });
@@ -159,14 +161,14 @@ export function CompanyDistribution({ giftMap, onChange }) {
       id={giftMap.id}
     >
       <nav>
-        <button onClick={onDownload}>Save PDF</button>
-        <button>Dublicate</button>
-        <button>Delete</button>
+        <button onClick={onDownload}>{t('icon.title.savePDF')}</button>
+        <button>{t('icon.title.duplicateDistribution')}</button>
+        <button>{t('icon.alt.delete')}</button>
         <button 
           {...listeners}
           {...attributes}
         >
-          Grab
+          {t('icon.alt.grab')}
         </button>
       </nav>
       <DndContext 
@@ -192,7 +194,7 @@ export function CompanyDistribution({ giftMap, onChange }) {
           )})}
         </div>
       </DndContext>
-      <p>Total price: {GiftMap.getTotalPrice(giftMap)}{settingsContext.currency}</p>
+      <p>{t('totalPrice')} {GiftMap.getTotalPrice(giftMap)}{settingsContext.currency}</p>
     </section>
   )
 }

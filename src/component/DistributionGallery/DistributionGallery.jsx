@@ -16,8 +16,11 @@ import {
   sortableKeyboardCoordinates,
   arrayMove
 } from '@dnd-kit/sortable';
+import { useTranslation } from 'react-i18next';
 
 export function DistributionGallery({ giftMapList, setGiftMapList, onAddDistribution }) {
+  const { t } = useTranslation();
+
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
@@ -65,7 +68,9 @@ export function DistributionGallery({ giftMapList, setGiftMapList, onAddDistribu
           </div>
         </SortableContext>
       </DndContext>
-      <button tabIndex={0} className="new-distribution-btn" onClick={onAddDistribution}>Add</button>
+      <button tabIndex={0} className="new-distribution-btn" onClick={onAddDistribution}>
+        {t('button.name.add')}
+      </button>
     </>
   )
 }

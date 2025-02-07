@@ -35,40 +35,7 @@ export function ModalDialog({ isOpen, children, className }) {
         dialogRef.current && dialogRef.current.close();
       }, animationSettings.duration);
     }
-    // dialogRef.current.close();
   }, [isOpen]);
-
-  // useEffect(() => {
-  //   refToAnimate?.current.animate([
-  //     { transform: 'translateY(-100vh)' },
-  //     { transform: 'translateY(0vh)' }
-  //   ], {
-  //     duration: 300,
-  //     iterations: 1,
-  //     fill: "forwards",
-  //   });
-  // }, [refToAnimate]);
-
-  // tmp
-  // function changeRate(direction) {
-  //   sliderRef.current.animate([
-  //     { transform: getTranslateXPropertyString(- currentRate * shiftStep) },
-  //     { transform: getTranslateXPropertyString(- (currentRate + direction) * shiftStep) }
-  //   ], animationSettings);
-
-  //   sliderRef.current.children[currentRate].animate([
-  //     activeRateSettings,
-  //     defaultRateSettings
-  //   ], animationSettings);
-
-  //   sliderRef.current.children[currentRate + direction].animate([
-  //     defaultRateSettings,
-  //     activeRateSettings
-  //   ], animationSettings);
-
-  //   setCurrentRate(currentRate + direction);
-  // }
-  //
 
   return (
     <dialog ref={dialogRef} className="modal-box">

@@ -5,6 +5,7 @@ import { generateColorSequence } from '../../../utils/color/colorRatingSystem';
 
 import { useEffect, useRef, useState } from 'react';
 import { useSettingsContext } from '../../../context/SettingsContext/SettingsContext';
+import { useTranslation } from 'react-i18next';
 
 // const matchTheme = {
 //   bestOptionColor: new RgbColor(0, 250, 42),
@@ -41,6 +42,8 @@ export function RatingSetter({
   onChoose,
   className,
 }) {
+  const { t } = useTranslation();
+
   const { ratingTheme, ratingNumber } = useSettingsContext();
 
   const sliderRef = useRef(null);
@@ -116,10 +119,10 @@ export function RatingSetter({
         </div>
       </div>
       <button className={`slider-btn left ${getDisabledOrEmpty(currentRate === 0)}`} onClick={rateDown}>
-        <img className='btn-img' src={RightArrowIcon}></img>
+        <img className='btn-img' src={RightArrowIcon} alt={t('icon.alt.leftArrow')}></img>
       </button>
       <button className={`slider-btn right ${getDisabledOrEmpty(currentRate === ratingNumber - 1)}`} onClick={rateUp}>
-        <img className='btn-img' src={RightArrowIcon}></img>
+        <img className='btn-img' src={RightArrowIcon} alt={t('icon.alt.rightArrow')}></img>
       </button>
     </div>
   )

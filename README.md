@@ -9,7 +9,7 @@
 - ✅Context 
 - Mb store distr rate and recount only on gifts update?
 - Add currency
-- Strings/languages in the whole project (i18next)
+- ✅Strings/languages in the whole project (i18next, ru, en)
 - (partially ✅)Change project structure
 - TS
 - refactoring
@@ -24,3 +24,4 @@
 - Implement settings
 - Keyboard!!!! (tabs and all)
 - RatingSetter you should fix!
+- Fix: edit gift modal does not open right after closing with ESC

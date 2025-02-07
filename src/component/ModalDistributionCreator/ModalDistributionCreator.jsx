@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { ModalDialog } from "../tools/ModalDialog/ModalDialog";
+import { useTranslation } from "react-i18next";
 
 export function ModalDistributionCreator({ isOpen, onConfirm }) {
+  const { t } = useTranslation();
+
   const [input, setInput] = useState("");
 
   function handleModalConfirm() {
@@ -14,17 +17,21 @@ export function ModalDistributionCreator({ isOpen, onConfirm }) {
   return (
     <ModalDialog isOpen={isOpen}>
       <div className="modal-create-distribution">
-        <label htmlFor="person-list">Gifts for... (use ',' as a separator)</label>
+        <label htmlFor="person-list">
+          {t('ModalDistributionCreator.title')}
+        </label>
         <input 
           type="text" 
           id="person-list" 
           name="person-list" 
-          placeholder="Write people you love here..."
+          placeholder={t('ModalDistributionCreator.placeholder')}
           value={input}
           onChange={e => setInput(e.target.value)}
           required 
         />
-        <button onClick={handleModalConfirm}>Ok!</button>
+        <button onClick={handleModalConfirm}>
+          {t('ModalDistributionCreator.confirm')}
+        </button>
       </div>
     </ModalDialog>
   )
